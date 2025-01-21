@@ -1,0 +1,121 @@
+Resolutions for the 2014-15 Exam
+
+Grupo I - Modelação Dimensional
+
+1. Data Mart Design (Kimball Methodology):
+
+Facts:
+
+Number of minutes played, goals scored/suffered, fouls committed/suffered, yellow cards, red cards, successful passes, failed passes, and assists for each player.
+
+Dimensions:
+
+Player Dimension: Player ID, Full Name, Nickname, Position, Address, Postal Code, Last Contract Date, Contract Duration, Acquisition Value, Release Clause Value, Current Club.
+
+Club Dimension: Club ID, Name, Address, Postal Code, Corporate ID, Foundation Date.
+
+Match Dimension: Match ID, Round Number, Weekend Number (1-5), Month, Year.
+
+Competition Dimension: Competition ID, Description (e.g., Primeira Liga, Taça de Portugal), Number of Rounds, Number of Clubs, Amateur/Professional Indicator.
+
+Time Dimension: Year, Month, Day, Weekend Number.
+
+Granularity:
+
+At the player statistics level per match and competition.
+
+Example Schema:
+
+Fact Table:
+
+Fact_Player_Stats: Player ID, Club ID, Match ID, Competition ID, Time ID, Minutes Played, Goals Scored, Goals Suffered, Fouls Committed, Fouls Suffered, Yellow Cards, Red Cards, Successful Passes, Failed Passes, Assists.
+
+Dimensions:
+
+Dim_Player: Player attributes.
+
+Dim_Club: Club attributes.
+
+Dim_Match: Match attributes.
+
+Dim_Competition: Competition attributes.
+
+Dim_Time: Time attributes.
+
+2. Changes to Support Specific Queries:
+
+Add a bridge table to track players who did not participate in specific matches or competitions:
+
+Bridge_Player_NonParticipation: Player ID, Match ID, Competition ID, Indicator of Non-Participation.
+
+Update the fact table with participation indicators to facilitate queries about matches and players where participation did not occur.
+
+Analyses:
+
+Query the bridge table for players not participating in specific matches or competitions.
+
+Cross-check with other dimensions and fact tables as needed.
+
+Grupo II - Múltipla Escolha
+
+1. Dimensional Model Objectives:
+
+Answer: All the presented reasons (simplicity, performance, flexibility).
+
+2. BUS Architecture (Kimball):
+
+Answer: The data warehouse results solely from the integration of atomic data marts.
+
+3. Currency Analysis in Data Warehouses:
+
+Answer: Any of the presented approaches can be used (columns for each currency, uniform conversion, or exchange rate fact table).
+
+4. Optimization Strategy Using Indexes:
+
+Answer: All presented statements are correct.
+
+5. MOLAP Characteristics:
+
+Answer: Queries are slower compared to Relational OLAP.
+
+Grupo III - Verdadeiros ou Falsos com Justificação
+
+1. Agreement Between Kimball and Inmon on Atomic Data:
+
+Answer: True.
+
+Justification: Both architectures prioritize atomic-level data for flexibility and detailed analysis.
+
+2. Fact Table Composition:
+
+Answer: True.
+
+Justification: Fact tables always contain a composite primary key, business measures, and optionally degenerate dimensions.
+
+3. SCD Type 3 for Rare Dimension Changes:
+
+Answer: False.
+
+Justification: SCD Type 3 is suitable for tracking a limited history of changes, but SCD Type 2 is typically used for low-frequency updates with full history.
+
+Grupo IV – Questão de Desenvolvimento
+
+Data Extraction Strategies:
+
+Full Extraction:
+
+All data is extracted from source systems regardless of changes.
+
+Example: Copying entire tables for archival purposes.
+
+Incremental Extraction:
+
+Only data modified since the last extraction is retrieved.
+
+Example: Using timestamps to extract updated records.
+
+Hybrid Strategy:
+
+Combines full extraction for certain data sets and incremental extraction for others.
+
+Example: Periodic full backups with daily incremental updates for transactional data.

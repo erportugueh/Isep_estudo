@@ -1,0 +1,113 @@
+Resolutions for the 2013-14 Exam
+
+Grupo I - Modelação Dimensional
+
+1. Data Mart Design (Kimball Methodology):
+
+Facts:
+
+Total goals scored during stoppage time (after 45 or 90 minutes).
+
+Total fouls suffered in the 1st, 2nd, or 3rd quarter of an hour, by half, for a specific player in a match.
+
+Dimensions:
+
+Player Dimension: Player ID, Name, Nickname, Position, Address, Postal Code, Last Contract Date, Contract Duration, Acquisition Value, Release Clause Value, Current Club.
+
+Club Dimension: Club ID, Name, Address, Postal Code, Corporate ID, Foundation Date.
+
+Match Dimension: Match ID, Round Number, Weekend Number (1-5), Month, Year, Games on Friday, Saturday, Sunday, Monday.
+
+Event Dimension: Event ID, Description (e.g., foul committed, foul suffered, goal scored, missed penalty, etc.), Infraction Indicator.
+
+Time Dimension: Day, Hour, Minute, Second.
+
+Granularity:
+
+At the event level for each player per match.
+
+Example Schema:
+
+Fact Table:
+
+Fact_Events: Player ID, Club ID, Match ID, Event ID, Time ID, Minutes Played, Goals Scored, Fouls Suffered, Fouls Committed, Yellow Cards, Red Cards, Assists, Successful Passes, Failed Passes.
+
+Dimensions:
+
+Dim_Player: Player attributes.
+
+Dim_Club: Club attributes.
+
+Dim_Match: Match attributes.
+
+Dim_Event: Event attributes.
+
+Dim_Time: Time attributes.
+
+2. Additional Requirements for Player Abilities:
+
+Create a new dimension:
+
+Dim_Abilities: Player ID, Ability Type (e.g., free-kick taker, penalty taker, dribbler), Proficiency Level.
+
+Update the Fact_Events table to include a reference to Dim_Abilities where necessary.
+
+Grupo II - Múltipla Escolha
+
+1. Invalid Operation in Data Staging Area:
+
+Answer: Analysis of data by users.
+
+2. Characteristics of a Fact Table:
+
+Answer: Contains all characteristics mentioned in the options.
+
+3. Index Types:
+
+Answer: All statements are false.
+
+4. Aggregation Creation Strategies:
+
+Answer: Any of the described forms.
+
+5. OLAP Operations:
+
+Answer: Drill-down consists of performing analyses at a lower level of detail.
+
+Grupo III - Verdadeiros ou Falsos com Justificação
+
+1. Surrogate Keys in Dimensions:
+
+Answer: False.
+
+Justification: Surrogate keys are used for maintaining data integrity and supporting slowly changing dimensions, not just for performance.
+
+2. Static Data Extraction Strategy:
+
+Answer: False.
+
+Justification: Static extraction can involve incremental strategies and other approaches besides brute force.
+
+3. Data Warehouse Aggregation Optimization:
+
+Answer: True.
+
+Justification: Introducing aggregations requires the creation of new fact tables to store these summaries.
+
+Grupo IV – Questão de Desenvolvimento
+
+Monetary Value Strategies in Dimensional Modeling:
+
+Uniform Currency Conversion:
+
+Use a standard currency (e.g., Euros) and convert all values to this currency during the ETL process.
+
+Include Exchange Rates in Fact Tables:
+
+Maintain a fact table containing daily exchange rates for each currency pair.
+
+Include these rates in joins when performing analysis.
+
+Store Values in Multiple Currencies:
+
+Add columns for different currencies in fact tables, allowing users to choose which currency to analyze.

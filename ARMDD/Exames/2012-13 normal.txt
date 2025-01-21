@@ -1,0 +1,125 @@
+Resolutions for the 2012-13 Exam
+
+Grupo I - Modelação Dimensional
+
+1. Data Mart Design (Kimball Methodology):
+
+Facts:
+
+Total expenses incurred per salesperson during trips, categorized by type (e.g., meals, flights, taxis).
+
+Total days spent on trips per salesperson.
+
+Dimensions:
+
+Salesperson Dimension: Salesperson ID, Name, Address, Postal Code, Mobile Number, Date of Admission, Last Year Sales Volume.
+
+Section Dimension: Section ID, Description, Creation Date, Closure Date (if applicable), Number of Salespersons, Section Leader.
+
+Client Dimension: Client ID, Name, Address, Postal Code, Country.
+
+Expense Type Dimension: Expense Type ID, Description (e.g., meals, flights).
+
+Trip Dimension: Trip ID, Salesperson ID(s), Client ID, Trip Date, Number of Days, Initial Budget.
+
+Currency Dimension: Currency Code, Name.
+
+Time Dimension: Day, Month, Year.
+
+Granularity:
+
+At the individual expense level per trip and salesperson.
+
+Example Schema:
+
+Fact Table:
+
+Fact_Expenses: Trip ID, Salesperson ID, Expense Type ID, Currency ID, Expense Value, Expense Date, Expense Time.
+
+Dimensions:
+
+Dim_Salesperson: Salesperson attributes.
+
+Dim_Section: Section attributes.
+
+Dim_Client: Client attributes.
+
+Dim_Expense_Type: Expense type attributes.
+
+Dim_Trip: Trip attributes.
+
+Dim_Currency: Currency attributes.
+
+Dim_Time: Time attributes.
+
+2. Currency Conversion Requirements:
+
+Create a fact table to store exchange rates:
+
+Fact_Exchange_Rates: Currency Pair, Conversion Date, Conversion Rate.
+
+Update the fact table Fact_Expenses to allow analyses in multiple currencies by joining with the exchange rate fact table.
+
+Grupo II - Múltipla Escolha
+
+1. Data Staging Area Characteristics:
+
+Answer: All the statements are correct (no end-user access, no report storage, ETL-only operations).
+
+2. Fact Type for Inventory:
+
+Answer: Can be added along all dimensions except date/time.
+
+3. Referential Integrity for Fact Loading:
+
+Answer: Check for surrogate keys before fact table loading.
+
+4. Partitioning Strategies:
+
+Answer: Accessing data in multiple partitions is not always faster than accessing a single table.
+
+5. MOLAP Characteristics:
+
+Answer: MOLAP is not suitable for handling very large data volumes.
+
+Grupo III - Verdadeiros ou Falsos com Justificação
+
+1. Relevance of Granularity:
+
+Answer: False.
+
+Justification: Granularity also impacts business understanding and query performance, not just technical design.
+
+2. Mini-Dimension Use:
+
+Answer: True.
+
+Justification: Mini-dimensions are used to store attributes such as flags and text, improving fact table performance.
+
+3. Aggregation Storage Techniques:
+
+Answer: True.
+
+Justification: Aggregations can be stored in pre-computed tables or calculated on the fly depending on query needs.
+
+Grupo IV – Questão de Desenvolvimento
+
+Slowly Changing Dimensions (SCD) Techniques:
+
+Type 1:
+
+Overwrite old data with new data.
+
+Example: Updating a salesperson's address without keeping history.
+
+Type 2:
+
+Create a new record for each change, maintaining full history.
+
+Example: Storing each version of a salesperson's address.
+
+Type 3:
+
+Maintain limited history by adding new columns for changes.
+
+Example: Keeping only the current and previous salesperson addresses.
