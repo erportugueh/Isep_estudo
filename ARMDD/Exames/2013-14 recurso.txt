@@ -1,0 +1,79 @@
+Exam 2013-2014
+
+Group I: Dimensional Modeling
+
+Analysis and Design of Dimensional Model:
+
+Facts:
+
+Number of students enrolled.
+
+Number of students present.
+
+Number of students who passed.
+
+Dimensions:
+
+Time Dimension: Contains details like date, day of the week, semester, and year.
+
+Course Dimension: Includes course code, description, start date, last update date, academic year, and department.
+
+Exam Dimension: Exam type (normal, improvement, special), date, time, duration, tolerance.
+
+Discipline Dimension: Code, acronym, name, credits, associated courses.
+
+Faculty Dimension: Includes professor details such as name, department, and qualification.
+
+Room Dimension (if needed for question 2): Building, floor, capacity, and features like climate control.
+
+Granularity: Data is stored at the exam-session level for each course and discipline.
+
+Extensions for Room Analysis:
+
+Add a "Room Dimension" with attributes: room ID, building, floor, capacity, and climate control status.
+
+Link the Room Dimension to the Fact Table.
+
+Group II: Multiple Choice
+
+Correct Answer: ✔ Consultas complexas, envolvendo grande volume de dados, que vulgarmente ocorrem nos sistemas de armazéns de dados.
+
+Correct Answer: ✔ Constitui um repositório de integração de dados em que os dados são atualizáveis.
+
+Correct Answer: ✔ Efetuar combinações dos diversos valores desses atributos e colocá-los numa só dimensão ou mesmo em mais do que uma dimensão.
+
+Correct Answer: ✔ Extração estática para carregar o armazém de dados inicialmente e extrações incrementais para os carregamentos seguintes.
+
+Correct Answer: ✔ Os dados no nível de granularidade mais básico/elementar são armazenados em estruturas de dados multidimensionais.
+
+Group III: True/False with Justification
+
+True. The most detailed level of granularity enables more flexible analyses, but may increase storage requirements.
+
+False. SCD Type 3 only maintains limited history (one previous value); Type 2 is more suitable for extensive history.
+
+True. Drill-down allows exploring finer details by moving to a lower level of data aggregation.
+
+Group IV: Development Question
+
+Partitioning in Data Warehouses:
+
+Advantages:
+
+Improved query performance.
+
+Easier maintenance.
+
+Enables parallel processing.
+
+Disadvantages:
+
+Increased complexity in setup and management.
+
+May introduce overhead during data loading.
+
+Types:
+
+Horizontal: Partitioning by ranges of values.
+
+Vertical: Partitioning by columns.

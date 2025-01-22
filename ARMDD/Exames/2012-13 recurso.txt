@@ -1,0 +1,63 @@
+Exam 2012-2013
+
+Group I: Dimensional Modeling
+
+Analysis and Design of Dimensional Model:
+
+Facts:
+
+Entry/exit times.
+
+Time spent in a room.
+
+Dimensions:
+
+Time Dimension: Time details.
+
+Employee Dimension: ID, name, birthdate, department, professional category, schedule type.
+
+Room Dimension: Room code, function, area, capacity, building.
+
+Door Dimension: Door code, security features, connected rooms.
+
+Granularity: Individual sensor-detected events.
+
+Extensions for Monthly Analysis:
+
+Add summary fields for monthly totals to the Fact Table.
+
+Precompute aggregate data for faster queries.
+
+Group II: Multiple Choice
+
+Correct Answer: ✔ Exceptuando a data staging area todos os outros componentes seguem o modelo dimensional no armazenamento dos dados.
+
+Correct Answer: ✔ Possuir uma estrutura desnormalizada, poucos atributos e muitos registos.
+
+Correct Answer: ✔ Não aditiva.
+
+Correct Answer: ✔ Especialmente úteis quando combinados em queries que envolvem múltiplos atributos.
+
+Correct Answer: ✔ Maior escalabilidade, em virtude de suportar a manipulação de volumes de dados muito elevados.
+
+Group III: True/False with Justification
+
+False. EffectiveDate and ExpiredDate are essential for managing Type 2 SCDs to track changes over time.
+
+True. Junk dimensions group unrelated attributes to avoid cluttering other dimensions.
+
+False. Horizontal partitioning can use various strategies, including ranges, hashes, or lists.
+
+Group IV: Development Question
+
+Correction of Facts:
+
+Methods:
+
+Logical deletion: Mark old records and insert new ones.
+
+Negative facts: Insert records with opposite values to nullify incorrect data.
+
+Physical deletion: Remove incorrect records and reload.
+
+Considerations: Maintain audit trails for accountability.

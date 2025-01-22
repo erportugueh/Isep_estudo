@@ -1,0 +1,67 @@
+Exam 2014-2015
+
+Group I: Dimensional Modeling
+
+Analysis and Design of Dimensional Model:
+
+Facts:
+
+Number of events by type.
+
+Products added to carts.
+
+Dimensions:
+
+User Dimension: User ID, name, address, postal code, demographics.
+
+Product Dimension: Code, description, category, price, stock details.
+
+Page Dimension: Page ID, type, function, creation date, size.
+
+Event Dimension: ID, description.
+
+Time Dimension: Local and universal timestamps.
+
+Granularity: Individual user events.
+
+Extensions for Daily Stock Analysis:
+
+Add a daily stock fact table.
+
+Include supplier and replenishment details in the Product Dimension.
+
+Group II: Multiple Choice
+
+Correct Answer: ✔ Necessitam de consolidar dados provenientes de sistemas operacionais diferentes.
+
+Correct Answer: ✔ Por qualquer um ou ambos os motivos apresentados nas alíneas anteriores.
+
+Correct Answer: ✔ Possui todas as características apresentadas nas alíneas anteriores.
+
+Correct Answer: ✔ Negar o facto (medidas com valores negativos) e voltar a proceder ao seu carregamento.
+
+Correct Answer: ✔ Implica que o esquema/estrutura das dimensões anteriormente existentes seja alterado.
+
+Group III: True/False with Justification
+
+True. Fact tables accommodate different types of measures, depending on the aggregation context.
+
+True. Temporal aspects are crucial in indexing and primary key design for fact tables.
+
+False. Type 2 SCDs require additional fields, such as start and end dates, for comprehensive history tracking.
+
+Group IV: Development Question
+
+Comparison of OLAP Types:
+
+MOLAP:
+
+Pros: Fast query performance, pre-aggregated data.
+
+Cons: High storage requirements, limited scalability.
+
+ROLAP:
+
+Pros: Scalability, supports large datasets.
+
+Cons: Slower queries due to on-the-fly aggregation.
