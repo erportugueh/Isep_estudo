@@ -1,0 +1,125 @@
+Grupo I – Múltipla Escolha
+A indexação em base de dados relacional é
+Resposta: c) Um mecanismo para acelerar a recuperação de dados em consultas.
+
+Qual dos seguintes tipos de índices geralmente oferece o desempenho mais rápido para consultas de igualdade?
+Resposta: a) Índice de árvore B+.
+
+Quais das opções são alguns exemplos populares de base de dados NoSQL?
+Resposta: c) MongoDB, Cassandra, Redis.
+
+O MongoDB armazena dados
+Resposta: c) Incorporando documentos dentro de outros documentos.
+
+O comando que em MongoDB permite atualizar documentos numa coleção é o
+Resposta: a) update.
+
+O comando db.createCollection("artigo") permite
+Resposta: c) criar uma coleção denominada artigo.
+
+O principal objetivo de uma base de dados distribuída é
+Resposta: c) Aumentar a disponibilidade e a escalabilidade dos dados.
+
+Grupo II – Desenvolvimento
+Discuta as vantagens e desvantagens de utilizar uma BD de documentos em comparação com outros tipos de base de dados NoSQL, como por exemplo a base de dados de chave-valor.
+Resposta:
+
+Vantagens de uma BD de documentos:
+Suporte a estruturas de dados complexas, como documentos JSON/ BSON, permitindo modelar relações hierárquicas diretamente.
+Flexibilidade no esquema: não é necessário definir estruturas fixas, o que facilita a evolução dos dados.
+Suporte eficiente a consultas complexas em campos específicos.
+Desvantagens de uma BD de documentos:
+Pode não ser tão eficiente para operações simples de leitura e escrita como as bases de dados chave-valor.
+Menor desempenho em consultas altamente relacionais, como as que exigem muitas junções.
+O consumo de armazenamento pode ser maior devido à repetição de dados.
+Em comparação, bases de dados chave-valor:
+
+São extremamente rápidas para leitura e escrita simples.
+Requerem maior esforço para implementar consultas mais complexas, já que não têm suporte nativo para estruturação avançada.
+Descreva como poderia projetar a estrutura da BD para armazenar informações sobre os artigos do blog, incluindo título, conteúdo, data de publicação, autor e tags. Explique como poderíamos consultar e exibir os artigos mais recentes na página inicial do blog.
+Resposta:
+
+Estrutura da Base de Dados MongoDB:
+json
+Copy
+Edit
+{
+  "title": "Título do Artigo",
+  "content": "Conteúdo do artigo",
+  "published_date": "YYYY-MM-DD",
+  "author": {
+    "name": "Nome do Autor",
+    "email": "email@example.com"
+  },
+  "tags": ["tag1", "tag2", "tag3"]
+}
+Consulta para exibir os artigos mais recentes:
+javascript
+Copy
+Edit
+db.articles.find().sort({ published_date: -1 }).limit(5);
+Essa consulta ordena os artigos pela data de publicação em ordem decrescente e retorna os 5 mais recentes para exibição na página inicial.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exame Época Recurso – 10 de Fevereiro de 2024
+Grupo II
+
+Indique e descreva as técnicas que se aplicam, em base de dados relacionais, para otimizar as consultas em SQL.
+Resposta:
+
+Indexação: Criação de índices (ex., B+ Tree, Hash) para acelerar a recuperação de dados, reduzindo a necessidade de leitura completa da tabela.
+Desnormalização: Combinação de tabelas para evitar junções frequentes em consultas que acessam dados relacionados.
+Otimização de consultas: Uso de técnicas como eliminação de subconsultas redundantes, reescrita de consultas para aumentar eficiência e evitar operações dispendiosas.
+Análise de planos de execução: Utilização de ferramentas para verificar o plano de execução das consultas e identificar gargalos.
+Particionamento: Divisão de grandes tabelas em partes menores com base em critérios lógicos (ex., partição por data ou região).
+Caching de consultas: Armazenar resultados de consultas frequentemente usadas em memória para acelerar a recuperação.
+Descreva, sucintamente, as diferenças entre os índices do tipo de árvore B+ e os índices do tipo hash. Em particular, discuta como funcionam as pesquisas por igualdade e por intervalo.
+Resposta:
+
+Índice B+ Tree:
+
+Organizado em uma estrutura hierárquica que facilita tanto pesquisas por igualdade quanto por intervalo.
+Pesquisas por igualdade: A pesquisa percorre a árvore até encontrar o nó folha correspondente.
+Pesquisas por intervalo: Suporta eficientemente intervalos, pois os nós folhas estão interligados, permitindo varreduras sequenciais.
+Índice Hash:
+
+Baseado em uma função de dispersão (hash) para mapear valores de chave a buckets.
+Pesquisas por igualdade: Extremamente eficiente, pois encontra o bucket diretamente.
+Pesquisas por intervalo: Não suporta, pois os dados não estão organizados sequencialmente.
+Exame Época Normal – 31 de Janeiro de 2024
+Grupo II
+
+Indique e justifique convenientemente quais são as principais diferenças entre as bases de dados de documentos em relação às bases de dados relacionais.
+Resposta:
+
+Esquema Flexível: Bases de dados de documentos, como MongoDB, não exigem um esquema rígido, enquanto bases relacionais, como MySQL, requerem a definição de esquemas fixos.
+Armazenamento de Dados: Bases de documentos armazenam dados em formato JSON/BSON, permitindo estruturas aninhadas, enquanto bases relacionais utilizam tabelas e relacionamentos normalizados.
+Desempenho: Consultas em bases de documentos podem ser mais rápidas para dados hierárquicos, enquanto bases relacionais são eficientes para operações altamente relacionais.
+Escalabilidade: Bases de documentos são projetadas para escalabilidade horizontal, enquanto bases relacionais geralmente utilizam escalabilidade vertical.
+Descreva o funcionamento do two-phase-commit e explique como ajuda a garantir a consistência ou a disponibilidade dos dados.
+Resposta:
+
+Funcionamento:
+
+Fase 1 (Preparação): O coordenador solicita a todos os participantes que preparem a transação (i.e., verifiquem se ela pode ser concluída). Os participantes respondem com "ready" ou "abort".
+Fase 2 (Commit ou Abort): Se todos os participantes estiverem prontos, o coordenador envia um "commit"; caso contrário, envia um "abort".
+Consistência: Garante que todos os nós envolvidos em uma transação distribuída tenham o mesmo resultado (commit ou abort).
+
+Disponibilidade: Pode ser afetada, pois se algum nó falhar ou o coordenador não responder, a transação pode permanecer bloqueada até que o problema seja resolvido.
+
+
+
+
