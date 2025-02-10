@@ -1,0 +1,173 @@
+**Data Mining Exam Solutions**
+
+---
+
+### **Question 1**
+
+Data mining models applicable to Higher Education Institutions (HEIs):
+
+1. **Descriptive Analysis**:
+
+   - **Clustering** to segment courses or students.
+   - **Association Rules** to identify patterns in assessment results.
+   - **Time Series Analysis** to understand trends in enrollments and academic performance.
+
+2. **Predictive Analysis**:
+
+   - **Regression** to predict dropout rates or employability.
+   - **Decision Trees/Random Forest** to predict student success based on academic history.
+   - **Neural Networks** to predict final grades based on student behavior.
+
+---
+
+### **Question 2**
+
+#### **(a) Naïve Bayes Classifier**
+
+We predict for **Size = Big; Orbit = Far; Temperature = High** using Naïve Bayes with Laplace smoothing = 1.
+
+1. **Prior Probabilities**:
+
+   - \(P(Habitable = Yes) = \frac{5}{9}\)
+   - \(P(Habitable = No) = \frac{4}{9}\)
+
+2. **Conditional Probabilities**:
+
+   - \(P(Size = Big | Yes) = \frac{2}{6}\)
+   - \(P(Size = Big | No) = \frac{2}{5}\)
+   - \(P(Orbit = Far | Yes) = \frac{3}{6}\)
+   - \(P(Orbit = Far | No) = \frac{2}{5}\)
+   - \(P(Temperature = High | Yes) = \frac{2}{6}\)
+   - \(P(Temperature = High | No) = \frac{3}{5}\)
+
+3. **Applying Naïve Bayes formula**:
+
+   - **For "Yes"**:\
+     \(P(Yes) \times P(Big|Yes) \times P(Far|Yes) \times P(High|Yes) = 0.0185\)
+   - **For "No"**:\
+     \(P(No) \times P(Big|No) \times P(Far|No) \times P(High|No) = 0.0213\)
+
+Since \(P(No) > P(Yes)\), the prediction is **No**.
+
+#### **(b) K-Nearest Neighbors (K=3)**
+
+Finding the 3 closest instances:
+
+- **(Big, Far, Low) → Yes**
+- **(Small, Far, High) → No**
+- **(Big, Near, High) → No**
+
+Since the majority is **No**, the prediction is **No**.
+
+---
+
+### **Question 3**
+
+**Ensemble learning** combines multiple models to improve prediction. Unlike traditional learning (using a single model), ensemble methods enhance generalization and reduce overfitting.
+
+Examples:
+
+- **Bagging (e.g., Random Forest)**: Trains multiple models on different subsets of data and combines predictions.
+- **Boosting (e.g., AdaBoost, XGBoost)**: Focuses on misclassified examples to improve accuracy.
+
+---
+
+### **Question 4**
+
+#### **(a) Confusion Matrix**
+
+True Positive Rate (TPR) = 35%\
+False Positive Rate (FPR) = 45%
+
+|              | Pred. Yes    | Pred. No    |
+| ------------ | ------------ | ----------- |
+| **Real Yes** | **110** (TP) | **59** (FN) |
+| **Real No**  | **238** (FP) | **72** (TN) |
+
+#### **(b) False Positives and False Negatives**
+
+- **False Positives (FP)**: Patients who fail the treatment are classified as successful.
+- **False Negatives (FN)**: Patients who succeed are classified as unsuccessful.
+
+Best evaluation metrics:
+
+- **F1-score** if FP and FN have equal importance.
+- **Recall** if FN (missing real successes) is more critical.
+
+---
+
+### **Question 5**
+
+#### **(a) Association Rule Measures**
+
+Formulas:
+
+- **Support**: \(sup(X \Rightarrow Y) = \frac{\text{transactions containing }X \cup Y}{\text{total transactions}}\)
+- **Confidence**: \(conf(X \Rightarrow Y) = \frac{sup(X \cup Y)}{sup(X)}\)
+- **Interest**: \(interest(X \Rightarrow Y) = conf(X \Rightarrow Y) - sup(Y)\)
+
+#### **(b) Identifying Special Rules**
+
+1. **Illusory Relationship**: **{F} ⇒ {C}** if confidence is high but support is low.
+2. **Rare but Interesting Rule**: **{D,E} ⇒ {A}** if confidence is high but support is low.
+3. **Disposable Rule**: **{A,B} ⇒ {C}** if both support and confidence are low.
+
+---
+
+### **Question 6**
+
+#### **(a) TF-IDF Calculation**
+
+TF-IDF formula:
+
+$$
+tfidf_{ij} = tf_{ij} \times idf_j
+$$
+
+where:
+
+$$
+idf_j = \log \left(\frac{N}{df_j}\right)
+$$
+
+Given \(N = 5\) and \(df_6 = 3\), we compute:
+
+$$
+idf_6 = \log(5/3) \approx 0.22
+$$
+
+For \(t6\) in \(d4\), with \(tf = 15\):
+
+$$
+tfidf = 15 \times 0.22 = 3.3
+$$
+
+#### **(b) Document Similarity**
+
+One way to compute similarity is using **cosine similarity**:
+
+$$
+sim(d_i, d_j) = \frac{d_i \cdot d_j}{\|d_i\| \|d_j\|}
+$$
+
+where \(d_i\) and \(d_j\) are document vectors.
+
+---
+
+### **Question 7**
+
+**(a) ARIMA**: AutoRegressive Integrated Moving Average.
+
+**(b) Steps to Identify and Fit an ARIMA Model**:
+
+1. **Identify Trends**: Check if the series is stationary.
+2. **Apply Differencing**: Transform to make it stationary.
+3. **Choose Parameters (p, d, q)**.
+4. **Train and Validate** the model.
+
+---
+
+End of Document.
+
+how do i download it now?
+
