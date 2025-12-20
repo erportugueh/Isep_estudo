@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"CurrencyID","STRING","3","0","0"
+"CurrencyName","STRING","20","0","0"
+"CurrencySymbol","STRING","3","0","0"
+"CreateDate","STRING","10","0","0"
+"LastUpdateDate","STRING","10","0","0"

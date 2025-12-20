@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"CategoryID","INTEGER","6","6","0"
+"Name","STRING","17","0","0"
+"Gender","STRING","1","0","0"
+"CreateDate","STRING","10","0","0"
+"LastUpdateDate","STRING","10","0","0"

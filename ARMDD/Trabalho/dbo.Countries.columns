@@ -1,0 +1,8 @@
+"name","type","length","leftDigits","rightDigits"
+"CountryID","INTEGER","2","2","0"
+"Name","STRING","24","0","0"
+"Code","STRING","2","0","0"
+"VAT","STRING","4","0","0"
+"EuroZone","INTEGER","1","1","0"
+"CreateDate","STRING","10","0","0"
+"LastUpdateDate","STRING","10","0","0"

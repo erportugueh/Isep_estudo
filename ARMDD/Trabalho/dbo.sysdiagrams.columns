@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"name","STRING","10","0","0"
+"principal_id","INTEGER","1","1","0"
+"diagram_id","INTEGER","1","1","0"
+"version","INTEGER","1","1","0"
+"definition","STRING","132104","0","0"

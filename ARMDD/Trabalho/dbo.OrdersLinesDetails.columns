@@ -1,0 +1,7 @@
+"name","type","length","leftDigits","rightDigits"
+"OrderLineID","INTEGER","7","7","0"
+"Currency","STRING","3","0","0"
+"Discount","DECIMAL","11","6","4"
+"PromotionDiscount","DECIMAL","8","3","4"
+"CreateDate","STRING","10","0","0"
+"LastUpdateDate","STRING","10","0","0"

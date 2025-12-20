@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"ProductVideoID","INTEGER","5","5","0"
+"ProductID","INTEGER","8","8","0"
+"Status","INTEGER","1","1","0"
+"CreateDate","STRING","10","0","0"
+"LastUpdateDate","STRING","10","0","0"
