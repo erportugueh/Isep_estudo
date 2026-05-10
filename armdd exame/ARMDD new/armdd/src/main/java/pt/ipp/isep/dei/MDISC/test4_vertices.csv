@@ -1,0 +1,201 @@
+﻿id,type,startDate,endDate,name,birthDate,nationality
+P1,person,2010-01-01,,Alice Silva,1980-01-01,PT
+P2,person,2010-01-01,,Bruno Silva,1975-01-01,PT
+P3,person,2015-01-01,,Carla Mendes,1985-01-01,PT
+P4,person,2012-03-15,,João Santos,1978-05-20,PT
+P5,person,2014-06-10,,Maria Costa,1982-11-30,PT
+P6,person,2016-09-01,,Pedro Alves,1970-02-14,PT
+P7,person,2018-01-20,,Ana Rodrigues,1990-07-05,PT
+P8,person,2011-05-12,,Carlos Ferreira,1965-12-25,PT
+P9,person,2019-08-30,,Sofia Martins,1988-03-18,PT
+P10,person,2013-11-05,,Miguel Oliveira,1972-09-09,PT
+P11,person,2017-04-22,,Teresa Sousa,1985-06-12,PT
+P12,person,2020-02-14,,Ricardo Pereira,1979-01-01,PT
+P13,person,2015-07-19,,Catarina Lopes,1992-04-25,PT
+P14,person,2012-10-08,,António Gomes,1968-08-15,PT
+P15,person,2021-01-30,,Beatriz Dias,1995-10-10,PT
+P16,person,2014-03-25,,Francisco Carvalho,1974-02-28,PT
+P17,person,2016-12-12,,Inês Ribeiro,1987-05-05,PT
+P18,person,2019-05-18,,Diogo Cardoso,1981-11-11,PT
+P19,person,2011-08-09,,Mariana Teixeira,1993-07-22,PT
+P20,person,2018-06-15,,Rui Moreira,1976-03-30,PT
+P21,person,2013-02-28,,Cláudia Pinto,1989-09-14,PT
+P22,person,2020-09-10,,André Silva,1983-12-01,PT
+P23,person,2015-11-22,,Patrícia Costa,1991-01-15,PT
+P24,person,2017-07-07,,Gonçalo Fernandes,1977-04-18,PT
+P25,person,2012-04-04,,Vera Almeida,1986-06-20,PT
+P26,person,2019-01-11,,Nuno Marques,1973-08-25,PT
+P27,person,2014-08-16,,Liliana Correia,1994-02-10,PT
+P28,person,2021-03-03,,Hugo Nunes,1980-10-05,PT
+P29,person,2016-05-29,,Daniela Rocha,1988-12-12,PT
+P30,person,2018-10-25,,Tiago Vieira,1975-05-30,PT
+P31,person,2011-12-19,,Susana Campos,1992-07-07,PT
+P32,person,2013-06-14,,Jorge Azevedo,1969-03-15,PT
+P33,person,2020-04-08,,Rita Monteiro,1984-09-20,PT
+P34,person,2015-02-02,,Paulo Cunha,1978-11-25,PT
+P35,person,2017-09-28,,Fernanda Reis,1990-01-05,PT
+P36,person,2012-07-23,,Vítor Baptista,1971-04-12,PT
+P37,person,2019-11-17,,Isabel Duarte,1987-06-18,PT
+P38,person,2014-01-13,,Manuel Coelho,1966-08-22,PT
+P39,person,2021-05-09,,Lucia Ramos,1993-10-28,PT
+P40,person,2016-08-05,,Eduardo Simões,1979-02-14,PT
+P41,person,2018-03-01,,Cristina Mendes,1985-05-09,PT
+P42,person,2011-10-27,,José Santos,1972-12-30,PT
+P43,person,2013-04-22,,Amélia Costa,1989-03-05,PT
+P44,person,2020-07-18,,Luís Ferreira,1976-07-11,PT
+P45,person,2015-09-14,,Helena Oliveira,1991-09-16,PT
+P46,person,2017-02-10,,Alberto Gomes,1968-11-21,PT
+P47,person,2012-11-06,,Graça Dias,1983-01-26,PT
+P48,person,2019-06-02,,Rodrigo Carvalho,1977-04-01,PT
+P49,person,2014-12-29,,Leonor Ribeiro,1994-06-06,PT
+P50,person,2021-08-25,,Bernardo Cardoso,1981-08-11,PT
+O1,organization,2000-01-01,,Ministry of Energy,public,PT
+O2,organization,2005-01-01,,EnergyCorp,company,PT
+O3,organization,2000-01-01,,Green Party,political party,PT
+O4,organization,2008-03-15,,TechSolutions Ltd,company,PT
+O5,organization,2010-06-20,,HealthFirst NGO,ngo,PT
+O6,organization,2012-09-10,,National Bank,bank,PT
+O7,organization,2002-11-05,,City Council Lisbon,public institution,PT
+O8,organization,2015-01-25,,SolarPower Inc,company,PT
+O9,organization,2018-04-12,,Education Foundation,foundation,PT
+O10,organization,2006-07-30,,Transport Authority,public institution,PT
+O11,organization,2011-10-18,,Media Group SA,company,PT
+O12,organization,2014-02-14,,Environmental Watch,ngo,PT
+O13,organization,2009-05-22,,Construction Corp,company,PT
+O14,organization,2017-08-08,,Digital Services Gov,public institution,PT
+O15,organization,2020-11-11,,Renewable Energy Co,company,PT
+O16,organization,2003-01-01,,Social Security Inst,public institution,PT
+O17,organization,2013-03-30,,Pharma Industries,company,PT
+O18,organization,2016-06-15,,Tourism Board,public institution,PT
+O19,organization,2019-09-20,,AgriBusiness Ltd,company,PT
+O20,organization,2007-12-05,,Legal Aid Society,ngo,PT
+O21,organization,2012-02-28,,Insurance Group,company,PT
+O22,organization,2015-05-10,,Cultural Institute,foundation,PT
+O23,organization,2018-08-15,,Logistics Network,company,PT
+O24,organization,2001-11-20,,Water Utility,public institution,PT
+O25,organization,2010-01-15,,Retail Chain SA,company,PT
+O26,organization,2014-04-05,,Sports Federation,ngo,PT
+O27,organization,2017-07-12,,Consulting Partners,company,PT
+O28,organization,2021-10-25,,CyberSecurity Firm,company,PT
+O29,organization,2004-01-30,,Housing Authority,public institution,PT
+O30,organization,2011-04-18,,Food Distribution,company,PT
+O31,organization,2016-07-22,,Research Center,foundation,PT
+O32,organization,2019-10-10,,Waste Management,company,PT
+O33,organization,2008-01-05,,Fire Service,public institution,PT
+O34,organization,2013-04-12,,Textile Mills,company,PT
+O35,organization,2015-07-18,,Animal Welfare,ngo,PT
+O36,organization,2018-10-22,,Automotive Group,company,PT
+O37,organization,2002-01-15,,Postal Service,public institution,PT
+O38,organization,2010-04-20,,Chemical Industries,company,PT
+O39,organization,2014-07-25,,Human Rights Org,ngo,PT
+O40,organization,2017-10-30,,Aerospace Tech,company,PT
+O41,organization,2005-01-10,,Railway Network,public institution,PT
+O42,organization,2012-04-15,,Biotech Labs,company,PT
+O43,organization,2016-07-20,,Disaster Relief,ngo,PT
+O44,organization,2019-10-25,,Mining Corp,company,PT
+O45,organization,2003-01-20,,Immigration Dept,public institution,PT
+O46,organization,2011-04-25,,Fashion House,company,PT
+O47,organization,2015-07-30,,Peace Initiative,ngo,PT
+O48,organization,2018-10-05,,Telecom Provider,company,PT
+O49,organization,2006-01-10,,Customs Agency,public institution,PT
+O50,organization,2013-04-15,,Real Estate Dev,company,PT
+C1,position,2020-01-01,,Minister of Energy,public,O1
+C2,position,2021-01-01,,CEO,business,O2
+C3,position,2015-03-10,,Director General,public,O4
+C4,position,2018-06-15,,Board Member,business,O6
+C5,position,2012-09-20,,Project Manager,business,O8
+C6,position,2016-12-25,,Councilor,public,O7
+C7,position,2019-03-30,,Executive Director,ngo,O5
+C8,position,2014-06-05,,Senior Analyst,business,O11
+C9,position,2017-09-10,,Head of Department,public,O14
+C10,position,2020-12-15,,Chief Technology Officer,business,O15
+C11,position,2011-03-20,,Regional Manager,business,O13
+C12,position,2015-06-25,,Policy Advisor,public,O1
+C13,position,2018-09-30,,Legal Counsel,business,O17
+C14,position,2013-12-05,,Coordinator,ngo,O12
+C15,position,2016-03-10,,Operations Director,business,O19
+C16,position,2019-06-15,,Inspector,public,O10
+C17,position,2014-09-20,,Financial Controller,business,O21
+C18,position,2017-12-25,,Program Director,ngo,O20
+C19,position,2012-03-30,,Sales Director,business,O25
+C20,position,2015-06-05,,HR Manager,business,O27
+C21,position,2018-09-10,,Security Chief,business,O28
+C22,position,2011-12-15,,Urban Planner,public,O29
+C23,position,2014-03-20,,Supply Chain Manager,business,O30
+C24,position,2017-06-25,,Lead Researcher,foundation,O31
+C25,position,2020-09-30,,Environmental Officer,business,O32
+C26,position,2013-12-05,,Fire Chief,public,O33
+C27,position,2016-03-10,,Production Manager,business,O34
+C28,position,2019-06-15,,Volunteer Coordinator,ngo,O35
+C29,position,2014-09-20,,Engineering Lead,business,O36
+C30,position,2017-12-25,,Postmaster General,public,O37
+C31,position,2012-03-30,,Plant Manager,business,O38
+C32,position,2015-06-05,,Advocacy Director,ngo,O39
+C33,position,2018-09-10,,Aerospace Engineer,business,O40
+C34,position,2011-12-15,,Station Master,public,O41
+C35,position,2014-03-20,,Lab Director,business,O42
+C36,position,2017-06-25,,Relief Coordinator,ngo,O43
+C37,position,2020-09-30,,Site Manager,business,O44
+C38,position,2013-12-05,,Border Control Agent,public,O45
+C39,position,2016-03-10,,Creative Director,business,O46
+C40,position,2019-06-15,,Peacekeeper,ngo,O47
+C41,position,2014-09-20,,Network Architect,business,O48
+C42,position,2017-12-25,,Customs Officer,public,O49
+C43,position,2012-03-30,,Property Developer,business,O50
+C44,position,2015-06-05,,Deputy Minister,public,O1
+C45,position,2018-09-10,,VP of Sales,business,O2
+C46,position,2011-12-15,,Party Secretary,political,O3
+C47,position,2014-03-20,,CTO,business,O4
+C48,position,2017-06-25,,Medical Director,ngo,O5
+C49,position,2020-09-30,,Risk Manager,business,O6
+C50,position,2013-12-05,,Mayor,public,O7
+A1,asset,2018-01-01,,Company Shares,PT,500000
+A2,asset,2019-03-15,,Apartment Lisbon,PT,350000
+A3,asset,2020-06-20,,Stock Portfolio,PT,120000
+A4,asset,2017-09-10,,Farm Land Alentejo,PT,250000
+A5,asset,2021-12-05,,Luxury Vehicle,PT,80000
+A6,asset,2016-03-25,,Commercial Space Porto,PT,450000
+A7,asset,2018-06-30,,Tech Startup Equity,PT,150000
+A8,asset,2019-09-15,,Art Collection,PT,90000
+A9,asset,2020-12-20,,Government Bonds,PT,200000
+A10,asset,2015-03-10,,Villa Algarve,PT,600000
+A11,asset,2017-06-15,,Cryptocurrency Holdings,PT,50000
+A12,asset,2018-09-20,,Yacht,PT,300000
+A13,asset,2019-12-25,,Private Jet Share,PT,400000
+A14,asset,2016-03-30,,Retail Store Franchise,PT,180000
+A15,asset,2021-06-05,,Patent Rights,PT,75000
+A16,asset,2014-09-10,,Warehouse Complex,PT,550000
+A17,asset,2017-12-15,,Hotel Shares,PT,220000
+A18,asset,2018-03-20,,Vintage Wine Cellar,PT,60000
+A19,asset,2019-06-25,,Investment Fund Units,PT,130000
+A20,asset,2020-09-30,,Office Building Madrid,ES,700000
+A21,asset,2015-12-05,,Timber Land,PT,280000
+A22,asset,2016-03-10,,Classic Car Collection,PT,110000
+A23,asset,2017-06-15,,Solar Farm Stake,PT,320000
+A24,asset,2018-09-20,,Music Rights,PT,45000
+A25,asset,2019-12-25,,Diamond Jewelry,PT,95000
+A26,asset,2020-03-30,,Pharma Stocks,PT,160000
+A27,asset,2021-06-05,,Beachfront Condo,PT,480000
+A28,asset,2014-09-10,,Mining Rights,PT,210000
+A29,asset,2015-12-15,,Software License Revenue,PT,85000
+A30,asset,2016-03-20,,Cattle Ranch,PT,390000
+A31,asset,2017-06-25,,Rare Books,PT,70000
+A32,asset,2018-09-30,,Bank Deposits,PT,500000
+A33,asset,2019-12-05,,Insurance Policies,PT,140000
+A34,asset,2020-03-10,,Restaurant Ownership,PT,260000
+A35,asset,2021-06-15,,Wind Turbine Share,PT,190000
+A36,asset,2014-09-20,,Historic Manor,PT,850000
+A37,asset,2015-12-25,,Gold Bars,PT,100000
+A38,asset,2016-03-30,,Transport Fleet,PT,330000
+A39,asset,2017-06-05,,Trademark Portfolio,PT,55000
+A40,asset,2018-09-10,,Private Island Lease,PT,900000
+A41,asset,2019-12-15,,Equity Swap Agreement,PT,170000
+A42,asset,2020-03-20,,Luxury Watch Collection,PT,125000
+A43,asset,2021-06-25,,Data Center Ownership,PT,650000
+A44,asset,2014-09-30,,Oil Rig Share,PT,420000
+A45,asset,2015-12-05,,Art Gallery Stake,PT,230000
+A46,asset,2016-03-10,,Hedge Fund Investment,PT,310000
+A47,asset,2017-06-15,,Private School Shares,PT,180000
+A48,asset,2018-09-20,,Aviation Hangar,PT,290000
+A49,asset,2019-12-25,,Broadcasting License,PT,150000
+A50,asset,2020-03-30,,International Real Estate,FR,550000

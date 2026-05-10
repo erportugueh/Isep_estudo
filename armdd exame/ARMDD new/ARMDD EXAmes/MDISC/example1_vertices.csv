@@ -1,0 +1,10 @@
+id,type,startDate,endDate,name/position/asset,extra1,extra2
+P1,person,2010-01-01,,Alice Silva,1980-01-01,PT
+P2,person,2010-01-01,,Bruno Silva,1975-01-01,PT
+P3,person,2015-01-01,,Carla Mendes,1985-01-01,PT
+O1,organization,2000-01-01,,Ministry of Energy,public,PT
+O2,organization,2005-01-01,,EnergyCorp,company,PT
+O3,organization,2000-01-01,,Green Party,political party,PT
+C1,position,2020-01-01,,Minister of Energy,public,O1
+C2,position,2021-01-01,,CEO,business,O2
+A1,asset,2018-01-01,,Company Shares,PT,500000

@@ -1,0 +1,50 @@
+﻿id,type,startDate,endDate,name/position/asset,extra1,extra2
+P4,person,2012-05-10,,Diogo Antunes,1978-11-20,PT
+P5,person,2010-03-15,,Beatriz Costa,1982-06-30,PT
+P6,person,2015-09-01,,Ricardo Jorge,1970-01-12,PT
+P7,person,2018-02-20,,Helena Matos,1990-04-05,PT
+P8,person,2011-11-11,,João Pereira,1983-08-25,PT
+P9,person,2014-07-04,,Sofia Martins,1976-12-01,PT
+P10,person,2016-01-20,,Miguel Veloso,1988-03-14,PT
+P11,person,2010-01-01,,Ana Lourenço,1972-09-09,PT
+P12,person,2019-05-12,,Tiago Ramos,1992-02-28,PT
+P13,person,2013-08-18,,Margarida Neves,1981-10-10,PT
+P14,person,2015-03-22,,Nuno Guerreiro,1974-05-15,PT
+P15,person,2017-12-01,,Isabel Castro,1987-11-03,PT
+P16,person,2012-10-10,,Vasco Gouveia,1979-07-21,PT
+P17,person,2011-04-05,,Filipa Soares,1984-01-19,PT
+P18,person,2020-06-15,,André Fonseca,1995-08-12,PT
+P19,person,2014-02-28,,Patrícia Rocha,1980-03-25,PT
+P20,person,2016-11-30,,Luís Cardoso,1973-12-14,PT
+O4,organization,2002-01-01,,BuildRight SA,company,PT
+O5,organization,2008-05-20,,InvestFund,fund,PT
+O6,organization,2000-10-10,,Município de Lisboa,public institution,PT
+O7,organization,2012-03-15,,TechGlobal,company,PT
+O8,organization,2005-09-01,,Educação Solidária,NGO,PT
+O9,organization,2001-01-20,,Partido do Centro,political party,PT
+O10,organization,2010-06-30,,Agência Ambiental,public institution,PT
+O11,organization,2015-01-01,,Consultoria VIP,company,PT
+O12,organization,2007-11-15,,Banco de Fomento,public institution,PT
+O13,organization,2003-04-04,,LobbyGroup,foundation,PT
+C3,position,2022-01-10,,Presidente da Câmara,political,O6
+C4,position,2021-03-01,,Administrador,business,O4
+C5,position,2020-09-15,,Secretário de Estado,public,O1
+C6,position,2022-05-20,,Diretor Financeiro,business,O7
+C7,position,2019-01-01,,Deputado,political,O9
+C8,position,2021-11-01,,Presidente do Conselho,business,O5
+C9,position,2023-01-15,,Vogal,public,O10
+C10,position,2020-06-01,,Consultor Sénior,business,O11
+C11,position,2022-02-14,,Assessor Político,public,O1
+C12,position,2021-07-20,,Gestor de Ativos,business,O12
+A2,asset,2015-01-01,,Apartamento Luxo,property,250000
+A3,asset,2020-03-15,,Ações BuildRight,company,120000
+A4,asset,2018-06-01,,Quinta Alentejo,property,450000
+A5,asset,2021-10-10,,Portfolio Cripto,fund,75000
+A6,asset,2012-12-20,,Yacht Azimut,vehicle,180000
+A7,asset,2019-05-05,,Vivenda Cascais,property,850000
+A8,asset,2022-01-01,,Ações TechGlobal,company,30000
+A9,asset,2017-08-15,,Terreno Industrial,property,200000
+A10,asset,2021-02-28,,Participação Banco,company,150000
+A11,asset,2020-11-11,,Escritório Porto,property,320000
+A12,asset,2014-04-04,,Coleção Arte,fund,95000
+A13,asset,2023-03-01,,Ações EnergyCorp,company,50000

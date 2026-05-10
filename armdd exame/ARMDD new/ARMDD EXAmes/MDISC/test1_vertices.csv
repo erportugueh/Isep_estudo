@@ -1,0 +1,26 @@
+﻿id,type,startDate,endDate,name/position/asset,extra1,extra2
+P21,person,2010-05-12,,Cláudia Bento,1980-04-15,PT
+P22,person,2015-11-20,,Gonçalo Vale,1975-09-30,PT
+P23,person,2018-03-10,,Mónica Santos,1992-12-05,PT
+P24,person,2012-08-15,,Artur Lima,1984-02-22,PT
+P25,person,2016-06-01,,Soraia Gomes,1988-07-14,PT
+P26,person,2011-02-28,,Jorge Mendes,1973-11-01,PT
+P27,person,2019-10-05,,Inês Rocha,1995-03-25,PT
+P28,person,2014-04-20,,Daniel Sousa,1981-10-10,PT
+O14,organization,2005-01-15,,EcoEnergy SA,company,PT
+O15,organization,2010-09-01,,Fundação Futuro,foundation,PT
+O16,organization,2002-03-20,,InfraEstruturas PT,public institution,PT
+O17,organization,2012-11-11,,Global Logistics,company,PT
+O18,organization,2008-05-05,,Associação Industrial,NGO,PT
+C13,position,2021-01-10,,Secretário Geral,political,O9
+C14,position,2022-06-15,,Diretor Geral,public,O16
+C15,position,2020-03-01,,Presidente Executivo,business,O14
+C16,position,2023-01-20,,Assessor Jurídico,public,O1
+C17,position,2021-09-15,,Consultor Estratégico,business,O17
+A14,asset,2019-01-01,,Moradia Sintra,property,1200000
+A15,asset,2021-05-20,,Ações EcoEnergy,company,85000
+A16,asset,2018-12-12,,Iate Sunseeker,vehicle,450000
+A17,asset,2022-03-15,,Fundo Investimento X,fund,200000
+A18,asset,2015-08-30,,Escritórios Lisboa,property,600000
+A19,asset,2020-11-01,,Ações Global Log,company,45000
+A20,asset,2023-02-10,,Coleção Relógios,fund,120000
