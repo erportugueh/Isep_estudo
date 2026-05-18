@@ -1,0 +1,300 @@
+5. US22 — Direct Nepotism 
+
+Pergunta: identificar casos de nepotismo direto. 
+ 
+
+Cálculo matricial: 
+App = appointedBy 
+Social = relativeOf ∪ friendOf ∪ associatedWith 
+Nepotism = App ∩ Social 
+ 
+
+Resultado obtido: 
+Carlos Cabral -> appointedBy -> Beatriz Bastos 
+Carlos Cabral <-> friendOf <-> Beatriz Bastos 
+ 
+
+Resultado do programa: 
+Direct nepotism detected: 
+Carlos Cabral was appointed by Beatriz Bastos and has a personal relation with Beatriz Bastos through friendOf. 
+ 
+
+Resposta final: 
+Carlos Cabral / Beatriz Bastos 
+ 
+
+6. US23 — Questões de análise 
+
+6.1 Pergunta 1 
+
+Which individuals have relatives who hold prominent positions? 
+Que indivíduos têm familiares que ocupam cargos relevantes? 
+ 
+
+Cálculo: 
+Pessoa A -> relativeOf -> Pessoa B 
+Pessoa B -> holdsPosition -> Cargo 
+Q1 = Rel × HP 
+ 
+
+Resultado matricial: 
+(P2,C1), (P5,C2), (P6,C3) 
+ 
+
+Interpretação: 
+P2 corresponde a Beatriz Bastos, que tem como familiar Ana Andrade, a qual ocupa C1, Minister of Energy. 
+P5 corresponde a Eurico Esteves, que tem como familiar Francisca Fontes, a qual ocupa C2, CEO. 
+P6 corresponde a Francisca Fontes, que tem como familiar Eurico Esteves, o qual ocupa C3, Judge. 
+ 
+
+Resultado do programa: 
+Beatriz Bastos 
+Eurico Esteves 
+Francisca Fontes 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+6.2 Pergunta 2 
+
+Which individuals have relatives who hold prominent positions in an organization? 
+Que indivíduos têm familiares que ocupam cargos relevantes numa organização? 
+ 
+
+Cálculo: 
+Pessoa A -> relativeOf -> Pessoa B 
+Pessoa B -> holdsPosition -> Cargo 
+Cargo -> inOrganization -> Organização 
+Q2 = Rel × HP × IO 
+ 
+
+Resultado matricial: 
+(P2,O1), (P6,O5) 
+ 
+
+Interpretação: 
+P2 corresponde a Beatriz Bastos. A sua familiar Ana Andrade ocupa C1, Minister of Energy, que pertence a O1, Ministry of Energy. 
+P6 corresponde a Francisca Fontes. O seu familiar Eurico Esteves ocupa C3, Judge, que pertence a O5, Ministry of Justice. 
+ 
+
+Embora C2, CEO, tenha no ficheiro de vértices uma referência auxiliar à organização O2, essa ligação não foi considerada porque não existe no ficheiro de relações a aresta C2 -> inOrganization -> O2. 
+ 
+
+Resultado do programa: 
+Beatriz Bastos 
+Francisca Fontes 
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+6.3 Pergunta 3 
+
+Which individuals holding positions in public organizations influence companies? 
+Que indivíduos que ocupam cargos em organizações públicas influenciam empresas? 
+ 
+
+Cálculo: 
+Q3 = (HP × IO_public) ∩ Inf 
+ 
+
+Resultado matricial: 
+(P1,O2) 
+ 
+
+Interpretação: 
+P1 corresponde a Ana Andrade. Ana Andrade ocupa C1, Minister of Energy, pertencente à organização pública O1, Ministry of Energy, e influencia O2, EnergyCorp. 
+ 
+
+Resultado do programa: 
+Ana Andrade 
+ 
+
+ 
+ 
+
+6.4 Pergunta 4 
+
+Which individuals hold positions in public organizations and own assets connected to companies they influence? 
+Que indivíduos ocupam cargos em organizações públicas e possuem ativos ligados a empresas que influenciam? 
+ 
+
+Cálculo: 
+Q4 = Pessoas(HP × IO_public) ∩ Pessoas(Inf) ∩ Econ 
+ 
+
+Resultado matricial: 
+(P1,A1) 
+ 
+
+Interpretação: 
+P1 corresponde a Ana Andrade. Ana Andrade ocupa cargo numa organização pública, influencia O2, EnergyCorp, e possui o ativo A1, Company Shares. 
+ 
+
+Nos ficheiros analisados não existe uma relação explícita entre A1 e O2. Assim, o ativo foi considerado relevante porque pertence à mesma pessoa que ocupa cargo público e influencia a empresa. 
+ 
+
+Resultado do programa: 
+Ana Andrade 
+ 
+ 
+
+6.5 Pergunta 5 
+
+Which individuals influence organizations where their relatives, friends, or associates have political connections? 
+Que indivíduos influenciam organizações onde os seus familiares, amigos ou associados têm ligações políticas? 
+ 
+
+Cálculo: 
+Social = relativeOf ∪ friendOf ∪ associatedWith 
+Q5 = Pessoas(Inf) ∩ (Social × Pol) 
+ 
+
+Resultado matricial: 
+(P1,O4) 
+ 
+
+Interpretação: 
+P1 corresponde a Ana Andrade. Ana Andrade influencia O2, EnergyCorp, e tem relação friendOf com Francisca Fontes. Francisca Fontes é membro de O4, Liberal Party. 
+ 
+
+Resultado do programa: 
+Ana Andrade 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+6.6 Pergunta 6 
+
+Which individuals are members of organizations that are opposed by people connected to them? 
+Que indivíduos são membros de organizações que são alvo de oposição por pessoas ligadas a eles? 
+ 
+
+Cálculo: 
+Q6 = (Mem × Oppᵀ) ∩ SocialReach 
+SocialReach = Social + Social² + Social³ 
+ 
+
+Resultado: 
+P6 
+Como par explicativo: (P6,P3) 
+ 
+
+Interpretação: 
+P6 corresponde a Francisca Fontes. Francisca Fontes é membro de O4, Liberal Party. P3, Carlos Cabral, opõe-se ao Liberal Party. Carlos Cabral está ligado indiretamente a Francisca Fontes através da rede pessoal: 
+Carlos Cabral <-> Beatriz Bastos <-> Ana Andrade <-> Francisca Fontes 
+ 
+
+Resultado do programa: 
+Francisca Fontes 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+6.7 Pergunta 7 
+
+Which individuals influence organizations supervised or controlled by organizations where people in their personal network hold positions? 
+Que indivíduos influenciam organizações supervisionadas ou controladas por organizações onde pessoas da sua rede pessoal ocupam cargos? 
+ 
+
+Cálculo: 
+Q7 = Inf ∩ (SocialReach × HP × IO × (Sup ∪ Ctrl)) 
+SocialReach = Social + Social² + Social³ 
+ 
+
+Resultado matricial: 
+(P1,O2) 
+ 
+
+Interpretação: 
+P1 corresponde a Ana Andrade. Ana Andrade influencia O2, EnergyCorp. Ana Andrade está ligada indiretamente a Diogo Dias através da rede pessoal. Diogo Dias ocupa C4, Lawyer. C4 pertence a O6, Law Firm SA. Law Firm SA supervisiona O2, EnergyCorp. 
+ 
+
+Caminho pessoal indireto: 
+Ana Andrade <-> Francisca Fontes <-> Eurico Esteves <-> Diogo Dias 
+ 
+
+Caminho organizacional: 
+Diogo Dias -> holdsPosition -> Lawyer 
+Lawyer -> inOrganization -> Law Firm SA 
+Law Firm SA -> supervises -> EnergyCorp 
+ 
+
+Resultado do programa: 
+Ana Andrade 
+ 
+
+
+Q6: Which individuals are members of organizations that are opposed by people connected to them? 
+
+Result:  
+
+(P6, P2) Francisca --------> Liberal Party ------> Carlos -----> Beatriz 
+
+Full Path: P6 --(memberOf)--> O4 --(rev_opposes)--> P3 --(anySocialLink)--> P2 
+
+Path: P6 --------> {memberOf} O4 <--------{opposes} P3 -------->{anySocialLink} P2. 
+
+Analysis: Detects personal social conflicts within organizational memberships. It reveals that P6 belongs to an organization (O4) that is opposed by P3, who is socially connected to P2. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Q7: Which individuals influence organizations that are supervised or controlled by organizations where their relatives, friends, or associates hold positions? 
+
+Result:  
+
+(P1, P5) Ana ------> EnergyCorp------> Law Firm SA ------> Lawyer ----->Diogo ------>Eurico 
+
+Full Path: P1 --(influences)--> O2 --(rev_supervises)--> O6 --(rev_inOrganization)--> C4 --(rev_holdsPosition)--> P4 --(anySocialLink)--> P5 
+
+Path: P1 --------> {influences} O2 <--------{{supervises}$ O6 <--------{{inOrg} C4 <-------- {holdsPosition} P4 --------> {anySocialLink$ P5. 
+
+Analysis: Detects "Regulatory Capture" or oversight conflicts. P1 influences O2, but O2 is supervised by O6, where P4 (an associate of P5) holds a position. This suggests oversight could be compromised by social connections. 
+
+ 
+ 
