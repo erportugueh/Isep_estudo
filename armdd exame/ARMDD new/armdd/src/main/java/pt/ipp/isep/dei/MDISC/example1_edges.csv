@@ -1,9 +1,0 @@
-id,type,startDate,endDate,entity1,entity2,weight
-E1,relativeOf,2010-01-01,,P1,P2,1.0
-E2,appointedBy,2022-01-01,,P2,P3,1.0
-E3,holdsPosition,2020-01-01,,P1,C1,1.0
-E4,inOrganization,2020-01-01,,C1,O1,1.0
-E5,influences,2021-01-01,,P1,O2,1.0
-E6,ownerOf,2018-01-01,,P1,A1,0.6
-E7,controls,2021-01-01,,O2,O1,1.0
-E8,memberOf,2015-01-01,,P3,O3,1.0
