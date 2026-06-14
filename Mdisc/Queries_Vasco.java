@@ -32,8 +32,8 @@ public class Queries {
             case 2 -> List.of("rev_inOrganization", "rev_holdsPosition", "influences");
             case 3 -> List.of("holdsPosition", "inOrganization", "rev_inOrganization", "rev_holdsPosition", "influences", "rev_influences", "anyEconomicLink");
             case 4 -> List.of("influences", "rev_influences", "anySocialLink", "anyPoliticalLink");   
-            case 5 -> List.of("memberOf", "rev_opposes", "anySocialLink");
-            case 6 -> List.of("influences", "rev_supervises", "rev_inOrganization", "rev_holdsPosition", "anySocialLink");
+            case 5 -> List.of("memberOf", "rev_opposes");
+            case 6 -> List.of("anySocialLink", "anySocialLink", "anySocialLink", "holdsPosition", "inOrganization", "anyStructuralLink");
             default -> List.of();
         };
     }
@@ -55,80 +55,103 @@ public class Queries {
             stepWitnesses.add(witness);
         }
 
-        return formatResults(resultMatrix, stepWitnesses, relationshipChain, questionIndex + 1);
-    }
+        if (questionIndex == 5) { 
+            int[][] social1 = buildMatrix("anySocialLink");
+            int[][] social2 = booleanMultiplyWithWitness(social1, social1, new int[n][n]);
+            int[][] social3 = booleanMultiplyWithWitness(social2, social1, new int[n][n]);
 
-private int[][] buildMatrix(String type) {
-    int n = entityIndex.size();
-    int[][] matrix = new int[n][n];
-
-    if (type.equals("relativeOf") || type.equals("anySocialLink")) {
-        List<String> types = type.equals("anySocialLink") 
-            ? List.of("relativeOf", "friendOf", "associatedWith") 
-            : List.of("relativeOf");
-        for (Edge e : allEdges) {
-            if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
-                int i = entityIndex.indexOf(e.getEntity1Id());
-                int j = entityIndex.indexOf(e.getEntity2Id());
-                if (i != -1 && j != -1) {
-                    matrix[i][j] = 1;
-                    matrix[j][i] = 1; 
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    boolean connectedInReach = (social1[i][j] == 1 || social2[i][j] == 1 || social3[i][j] == 1);
+                    if (resultMatrix[i][j] == 1 && !connectedInReach) {
+                        resultMatrix[i][j] = 0;
+                    }
+                }
+            }
+        } 
+        else if (questionIndex == 6) { 
+            int[][] influences = buildMatrix("influences");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (resultMatrix[i][j] == 1 && influences[i][j] != 1) {
+                        resultMatrix[i][j] = 0;
+                    }
                 }
             }
         }
-        return matrix;
+
+        return formatResults(resultMatrix, stepWitnesses, relationshipChain, questionIndex + 1);
     }
 
-    if (type.equals("anyPoliticalLink")) {
-        List<String> types = List.of("memberOf", "supports", "opposes");
-        for (Edge e : allEdges) {
-            if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
-                int i = entityIndex.indexOf(e.getEntity1Id());
-                int j = entityIndex.indexOf(e.getEntity2Id());
-                if (i != -1 && j != -1) matrix[i][j] = 1;
-            }
-        }
-        return matrix;
-    }
+    private int[][] buildMatrix(String type) {
+        int n = entityIndex.size();
+        int[][] matrix = new int[n][n];
 
-    if (type.equals("anyEconomicLink")) {
-        List<String> types = List.of("ownerOf", "partnerOf");
-        for (Edge e : allEdges) {
-            if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
-                int i = entityIndex.indexOf(e.getEntity1Id());
-                int j = entityIndex.indexOf(e.getEntity2Id());
-                if (i != -1 && j != -1) matrix[i][j] = 1;
+        if (type.equals("relativeOf") || type.equals("anySocialLink")) {
+            List<String> types = type.equals("anySocialLink") 
+                ? List.of("relativeOf", "friendOf", "associatedWith") 
+                : List.of("relativeOf");
+            for (Edge e : allEdges) {
+                if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
+                    int i = entityIndex.indexOf(e.getEntity1Id());
+                    int j = entityIndex.indexOf(e.getEntity2Id());
+                    if (i != -1 && j != -1) {
+                        matrix[i][j] = 1;
+                        matrix[j][i] = 1; 
+                    }
+                }
             }
+            return matrix;
         }
-        return matrix;
-    }
+
+        if (type.equals("anyPoliticalLink")) {
+            List<String> types = List.of("memberOf", "supports", "opposes");
+            for (Edge e : allEdges) {
+                if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
+                    int i = entityIndex.indexOf(e.getEntity1Id());
+                    int j = entityIndex.indexOf(e.getEntity2Id());
+                    if (i != -1 && j != -1) matrix[i][j] = 1;
+                }
+            }
+            return matrix;
+        }
+
+        if (type.equals("anyEconomicLink")) {
+            List<String> types = List.of("ownerOf", "partnerOf");
+            for (Edge e : allEdges) {
+                if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
+                    int i = entityIndex.indexOf(e.getEntity1Id());
+                    int j = entityIndex.indexOf(e.getEntity2Id());
+                    if (i != -1 && j != -1) matrix[i][j] = 1;
+                }
+            }
+            return matrix;
+        }
 
         if (type.equals("anyStructuralLink")) {
-        List<String> types = List.of("supervises", "controls");
+            List<String> types = List.of("supervises", "controls");
+            for (Edge e : allEdges) {
+                if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
+                    int i = entityIndex.indexOf(e.getEntity1Id());
+                    int j = entityIndex.indexOf(e.getEntity2Id());
+                    if (i != -1 && j != -1) matrix[i][j] = 1;
+                }
+            }
+            return matrix;
+        }
+
+        boolean reverse = type.startsWith("rev_");
+        String actualType = reverse ? type.substring(4) : type;
         for (Edge e : allEdges) {
-            if (types.stream().anyMatch(t -> t.equalsIgnoreCase(e.getType()))) {
-                int i = entityIndex.indexOf(e.getEntity1Id());
-                int j = entityIndex.indexOf(e.getEntity2Id());
+            if (e.getType().equalsIgnoreCase(actualType)) {
+                int i = entityIndex.indexOf(reverse ? e.getEntity2Id() : e.getEntity1Id());
+                int j = entityIndex.indexOf(reverse ? e.getEntity1Id() : e.getEntity2Id());
                 if (i != -1 && j != -1) matrix[i][j] = 1;
             }
-        
-
         }
         return matrix;
     }
 
-    boolean reverse = type.startsWith("rev_");
-    String actualType = reverse ? type.substring(4) : type;
-    for (Edge e : allEdges) {
-        if (e.getType().equalsIgnoreCase(actualType)) {
-            int i = entityIndex.indexOf(reverse ? e.getEntity2Id() : e.getEntity1Id());
-            int j = entityIndex.indexOf(reverse ? e.getEntity1Id() : e.getEntity2Id());
-            if (i != -1 && j != -1) matrix[i][j] = 1;
-        }
-    }
-    return matrix;
-
-}
     private int[][] booleanMultiplyWithWitness(int[][] A, int[][] B, int[][] witness) {
         int n = A.length;
         int[][] result = new int[n][n];
@@ -146,7 +169,7 @@ private int[][] buildMatrix(String type) {
         return result;
     }
 
-     private List<String> formatResults(int[][] resultMatrix, List<int[][]> witnesses, List<String> chain, int qNum) {
+    private List<String> formatResults(int[][] resultMatrix, List<int[][]> witnesses, List<String> chain, int qNum) {
         List<String> output = new ArrayList<>();
         output.add("US23 – Q" + qNum);
         boolean found = false;
@@ -177,7 +200,7 @@ private int[][] buildMatrix(String type) {
         List<int[][]> subWitnesses = witnesses.subList(0, lastWitnessIdx);
         
         return reconstructPathString(startIdx, midIdx, subWitnesses, subTypes) 
-               + " --(" + chainTypes.get(chainTypes.size()-1) + ")--> " + entityIndex.get(endIdx);
+               + " --(" + chainTypes.get(chainTypes.size() - 1) + ")--> " + entityIndex.get(endIdx);
     }
 
     private List<String> extractEntities(List<Edge> edges) {
