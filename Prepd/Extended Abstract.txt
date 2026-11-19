@@ -1,0 +1,75 @@
+Função do Extended Abstract neste contexto
+Completion requirements
+O documento de extended abstract deve permitir ao RUC verificar se:
+
+1.	O estudante consegue formular e delimitar claramente o problema de investigação?
+
+2.	O estudante demonstra domínio suficiente do estado da arte relevante?
+
+3.	Os objetivos e a metodologia proposta são coerentes com o problema e exequíveis no tempo disponível?
+
+4.	O plano de trabalho é realista e suficientemente estruturado para chegar ao documento final da UC e, mais tarde, à tese?
+
+5.	O estudante identificou e refletiu sobre eventuais implicações éticas, profissionais ou de responsabilidade social associadas ao projeto?
+
+A resposta positiva a estas perguntas justificará a marcação de prova final, que avaliará as competências do estudante vertidas no documento final (e não neste extended abstract).
+
+
+
+Estrutura sugerida
+Completion requirements
+1. Título Provisório
+
+Clara delimitação temática.
+Evitar títulos demasiado genéricos.
+2. Introdução e Enquadramento do Problema (~½ página)
+
+Contextualização do domínio.
+Relevância do problema no campo científico, técnico ou social.
+Delimitação precisa: evitar generalidades e “grandes narrativas”.
+Formulação clara do problema de investigação.
+Identificação das principais partes interessadas (stakeholders).
+3. Pergunta(s) de Investigação e Objetivos (~⅓ página)
+
+Uma pergunta principal de investigação e subperguntas, se fizer sentido.
+Objetivos concretos, verificáveis, alinhados com o problema.
+Principais contributos/benefícios do trabalho/projeto.
+4. Estado da Arte (Sistematizado) (~1 a 1,5 páginas)
+
+O objetivo é mostrar domínio e enquadramento, não exaustividade.
+
+Indicar, de forma breve, o processo de pesquisa documental:
+Método de pesquisa
+Objetivo(s)/Questão(ões)
+Palavras-chave
+Critérios de inclusão/exclusão (se aplicável)
+Principais abordagens, modelos, debates ou correntes teóricas.
+Perspetivas comparadas (não listas de autores).
+Identificação explícita da lacuna que o projeto pretende trabalhar.
+NB: dependendo do projeto, pode fazer sentido que esta secção seja apresentada depois da metodologia proposta.
+5. Metodologia Proposta (~⅓ página)
+
+Estratégia geral de investigação ou engenharia, quadro teórico e/ou métodos.
+Fontes de dados ou materiais, técnicas de análise ou desenvolvimento.
+Mostrar viabilidade e adequação à pergunta/objetivos.
+NB: dependendo do projeto, pode fazer sentido que esta secção seja apresentada antes da secção do estado da arte.
+6. Plano de Trabalho (~½ página)
+
+Até ao documento final da UC (até avaliação de PREPD): Tarefas específicas a desenvolver (estado da arte, definição de instrumentos, clarificação metodológica, preparação de apresentação, etc.).
+Até à redação da tese (DIMEI):
+Identificação dos principais entregáveis e sua adequação à metodologia e objetivos propostos (ex. WBS).
+Identificação dos principais marcos temporais a atingir.
+Os entregáveis e marcos temporais podem ser disponibilizados de forma integrada numa versão preliminar do Gantt Chart (ou timeline).
+7. Considerações Éticas e Profissionais (~½ página)
+
+
+Identificar códigos de ética seguidos.
+Descrever sucintamente como códigos de ética são seguidos, nomeadamente:
+Indicar se o projeto envolve dados pessoais, participação humana, informação confidencial ou potenciais impactos. Se sim, explicar como são tratados; se não, declarar que foi avaliado e que não há riscos relevantes, com breve justificação.
+Descrever como assegura as competências profissionais necessárias ao projeto.
+8. Referências Bibliográficas (~1 página, estilo consistente)
+
+10 a 20 referências essenciais, atuais e relevantes de acordo com a secção de Estado da Arte.
+Preferir artigos e livros científicos; evitar generalidades web (cf. módulo sobre este tema).
+Utilizar estilo consistente (por ex. APA, Chicago, Vancouver, IEEE) (cf. módulo sobre este tema).
+
